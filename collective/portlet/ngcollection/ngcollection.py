@@ -117,10 +117,8 @@ class EditForm(base.EditForm):
     This is registered with configure.zcml. The form_fields variable tells
     zope.formlib which fields to display.
     """
-    form_fields = form.Fields(INGCollection)
-    if UberSelectionWidget:
-        form_fields['target_collection'].custom_widget = UberSelectionWidget
-    fields = field and field.Fields(INGCollection)
+
+    schema = INGCollection
 
     label = _(u"Edit NG Collection Portlet")
     description = _(u"This portlet extends standard plone collection portlet "
