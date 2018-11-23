@@ -97,10 +97,8 @@ class AddForm(base.AddForm):
     zope.formlib which fields to display. The create() method actually
     constructs the assignment that is being added.
     """
-    form_fields = form.Fields(INGCollection)
-    if UberSelectionWidget:
-        form_fields['target_collection'].custom_widget = UberSelectionWidget
-    fields = field and field.Fields(INGCollection)
+
+    schema = INGCollection
 
     label = _(u"Add NG Collection Portlet")
     description = _(u"This portlet extends standard plone collection portlet "
